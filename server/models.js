@@ -6,7 +6,6 @@ mongoose.set('useFindAndModify', false);
 var PetSchema = new mongoose.Schema ( {
 	petName : { 
 		type : String, 
-		unique: true,
 		// unique : [true, "This pet name already exists"],
 		// uniqueCaseInsensitive: true,
         required : [ true , 'A name is required' ],
