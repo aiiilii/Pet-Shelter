@@ -1,0 +1,55 @@
+<h4>Know of a pet needing a home?</h4>
+
+<div *ngIf="errors.petName" style="color: blueviolet;">{{ errors.petName.message }}</div>
+<div *ngIf="errors.petType" style="color: blueviolet;">{{ errors.petType.message }}</div> 
+<div *ngIf="errors.desc" style="color: blueviolet;">{{ errors.desc.message }}</div>
+
+<!-- <div *ngFor="let error of errors">
+    {{ error }}
+</div> -->
+
+<form #writeForm="ngForm" (submit)="submit()">
+    <label for="petName">Pet Name: </label>
+    <input
+        type="text"
+        name="petName"
+        id="petName"
+        [(ngModel)]="newPet.petName"
+        minlength="3"
+        required><br>
+    <label for="petType">Pet Type: </label>
+    <input
+        type="text"
+        name="petType"
+        id="petType"
+        [(ngModel)]="newPet.petType"
+        minlength="3"
+        required><br>
+    <label for="desc">Description: </label>
+    <input
+        type="text"
+        name="desc"
+        [(ngModel)]="newPet.desc"
+        id="desc"><br>
+    <p>Skills: </p>
+    <label for="skillOne">Skill 1: </label>
+    <input
+        type="text"
+        name="skillOne"
+        [(ngModel)]="newPet.skillOne"
+        id="skillOne"><br>
+    <label for="skillTwo">Skill 2: </label>
+    <input
+        type="text"
+        name="skillTwo"
+        [(ngModel)]="newPet.skillTwo"
+        id="skillTwo"><br>
+    <label for="skillThree">Skill 3: </label>
+    <input
+        type="text"
+        name="skillThree"
+        [(ngModel)]="newPet.skillThree"
+        id="skillThree"><br>
+    <input type="submit" name="submit" id="submit" value="Add Pet">
+    <button [routerLink]="['/pets']">Cancel</button>
+</form>

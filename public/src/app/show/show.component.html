@@ -1,0 +1,13 @@
+<h4>Details about {{ onePet.petName }}</h4>
+<a [routerLink]="['/pets']">Home</a>
+
+<p><b>Pet type:</b> {{ onePet.petType }}</p>
+<p><b>Description:</b>  {{ onePet.desc }}</p>
+<p><b>Skills:</b></p>
+<p>{{ onePet.skillOne }}</p>
+<p>{{ onePet.skillTwo }}</p>
+<p>{{ onePet.skillThree }}</p>
+<p><b>Likes:</b> {{ onePet.like }}</p>
+
+<button [disabled]="isValid" (click)="likePet(onePet._id, onePet, 1)">Like this pet</button>
+<button (click)="deletePet(onePet._id)">Adopt this pet!</button>
